@@ -1,6 +1,8 @@
 # AWS IoT Device Defender Machine Learning Detect
 We will setup ML Detect feature using AWS CLI using following guide and will also setup scripts on how to create anamoly from device side for us to test the system.
 
+Lets first setup our ML Detect Security profile and go through steps on attaching to specific IoT things (devices) / group.
+
 ## Step 1 Enable ML Detect on device group(s) 
 
 ### Using AWS CLI
