@@ -353,7 +353,7 @@ aws ml-iot update-security-profile \
   --region eu-west-1 --endpoint-url https://iot.eu-west-1.amazonaws.com
 ```
 
-# **Step 5 Mitigate identified device issues**
+## **Step 5 Mitigate identified device issues**
 
 ### Using AWS CLI
 
