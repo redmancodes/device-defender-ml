@@ -1,4 +1,4 @@
-# README.md
+# AWS IoT Device Defender Machine Learning Detect
 
 ## Step 1 Enable ML Detect on device group(s) 
 
