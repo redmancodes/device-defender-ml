@@ -1,4 +1,5 @@
 # AWS IoT Device Defender Machine Learning Detect
+We will setup ML Detect feature using AWS CLI using following guide and will also setup scripts on how to create anamoly from device side for us to test the system.
 
 ## Step 1 Enable ML Detect on device group(s) 
 
