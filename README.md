@@ -388,7 +388,7 @@ Will give the result whether its working or not.
 
 ### First anomalous behaviour test
 
-* We will use the following script (anom_simulator.py) to simulate anomalous behaviour, your profile which you have created above for ML Detect if its active and ML Model is built you will see these in violations screen.
+* We will use the [following script](https://github.com/redmancodes/device-defender-ml/blob/main/sampleScripts/anom_simulator.py) to simulate anomalous behaviour
 
 ``` 
 python3 anom_simulator.py --msg-size 2000 --count 5000 --sleep-time 0.25 --thing-name anom_thing_1 --group-name anom_group --policy allow_iot_operations --security-profile-name <FILL_Sec_Profile_Name> --region <FILL_Region> --account_id <FILL account-id> aws_profile <FILL ws-profile-name>
@@ -427,7 +427,7 @@ Sleeping for 0.25 seconds
 
 ### Second Shared Security certificate test
 
-For this test we will use the following script: SharedCertSimulator.py, the script will do following:
+For this test we will use the [following script](https://github.com/redmancodes/device-defender-ml/blob/main/sampleScripts/SharedCertSimulator.py), the script will do following:
 
 It will create a new random thing name, thing group, a shared certificate and connect (and do nothing else).
 
@@ -440,5 +440,4 @@ python SharedCertSimulator.py --endpoint <iot_endpoint> --region <aws_region>
 Audit result:
 
 ![alt text](https://github.com/redmancodes/device-defender-ml/blob/main/image/image.png?raw=true)
-
 
