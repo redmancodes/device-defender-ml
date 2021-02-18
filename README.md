@@ -388,7 +388,7 @@ Will give the result whether its working or not.
 
 ### First anomalous behaviour test
 
-* We will use the following script (anom_simulator.py) to simulate anomalous behaviour
+* We will use the following script (anom_simulator.py) to simulate anomalous behaviour, your profile which you have created above for ML Detect if its active and ML Model is built you will see these in violations screen.
 
 ``` 
 python3 anom_simulator.py --msg-size 2000 --count 5000 --sleep-time 0.25 --thing-name anom_thing_1 --group-name anom_group --policy allow_iot_operations --security-profile-name <FILL_Sec_Profile_Name> --region <FILL_Region> --account_id <FILL account-id> aws_profile <FILL ws-profile-name>
