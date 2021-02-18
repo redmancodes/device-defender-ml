@@ -1,5 +1,24 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# This script is for demonstration purposes only and not intended for production use.
+MIT License
+
+Copyright (c) 2020 Syed Rehan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 #>> args to run: python3 anom_simulator.py --msg-size 2000 --count 5000 --sleep-time 0.25 --thing-name anom_thing_1 --group-name anom_group --policy allow_iot_operations --security-profile-name ML_Detect_profile --region eu-west-1 --account_id <account-id> aws_profile <aws-profile-name>
 
