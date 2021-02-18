@@ -438,3 +438,7 @@ Run with following command:
 python SharedCertSimulator.py --endpoint <iot_endpoint> --region <aws_region>
 ```
 Audit result:
+
+![alt text](https://github.com/redmancodes/device-defender-ml/blob/main/image/image.png?raw=true)
+
+
