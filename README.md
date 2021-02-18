@@ -373,3 +373,68 @@ aws ml-iot create-mitigation-action
           [--cli-auto-prompt <value>]
 ```
 
+#
+# Simulation 
+### Lets do simulation using sample scripts
+
+Before starting to test this make sure your aws CLI profile is up to date and working.
+
+``` 
+aws s3 ls 
+``` 
+Will give the result whether its working or not.
+
+**Please note these scripts are for simulation purposes and not intended for Production usage (Use it at your own risk)** 
+
+### First anomalous behaviour test
+
+* We will use the following script (anom_simulator.py) to simulate anomalous behaviour
+
+``` 
+python3 anom_simulator.py --msg-size 2000 --count 5000 --sleep-time 0.25 --thing-name anom_thing_1 --group-name anom_group --policy allow_iot_operations --security-profile-name <FILL_Sec_Profile_Name> --region <FILL_Region> --account_id <FILL account-id> aws_profile <FILL ws-profile-name>
+
+```
+
+Let's look at this in detail we will be creating 2000 messages on MQTT topic (test/topic) and the script will automatically create thing name: anom_thing_1 with group name: anom_group, prior to running make sure you have ML Detect profile created and give that profile name in the command as well as other details as enlisted.
+
+If you dont have any specific aws cli profile you can just give 'default' for aws_profile param, note param thing name can contain same thing name which already exist else it will give you error. Since this script will orchestrate all the setup for the thing and run the simulation.
+
+While the script running you can go to AWS IoT Core and use test client and subscribe to following MQTT topic: test/topic
+
+If its successful you will get following console output:
+
+```
+Launching setup of profiles....
+Thing creation of anomaly_thing_x complete!
+Found endpoint: aar4akmtxxxxx-ats.iot.eu-west-1.amazonaws.com
+Policy anom_policy already exists.
+Group anom_group already exists.
+125da6bb0a8397dffced11854054a451d0b965ba24f3e518382c009d3e7c470e
+Connecting to aar4akmtxxxxx-ats.iot.eu-west-1.amazonaws.com with client ID 'anomaly_thing_x'...
+Connected!
+Subscribing to topic 'test/topic'...
+Subscribed with QoS.AT_LEAST_ONCE
+Sending 5000 message(s)
+Publishing message [1/5000] to topic 'test/topic': 2000
+Sleeping for 0.25 seconds
+Received message from topic 'test/topic': 2000
+Publishing message [2/5000] to topic 'test/topic': 2000
+Sleeping for 0.25 seconds
+Received message from topic 'test/topic': 2000
+Publishing message [3/5000] to topic 'test/topic': 2000
+Sleeping for 0.25 seconds
+```
+
+### Second Shared Security certificate test
+
+For this test we will use the following script: SharedCertSimulator.py, the script will do following:
+
+It will create a new random thing name, thing group, a shared certificate and connect (and do nothing else).
+
+For auditing test purpose you just need to make sure that Audit with Shared certs check is enabled run this test and run audit on shared certificates and you will see non-compliance in audit report.
+
+Run with following command:
+```
+python SharedCertSimulator.py --endpoint <iot_endpoint> --region <aws_region>
+```
+Audit result:
