@@ -23,7 +23,7 @@ Create Security Profile command:
 
 
 ```
-aws ml-iot create-security-profile \
+aws iot create-security-profile \
     --security-profile-name <value> \
     [--security-profile-description <value>] \
     [--behaviors <value>] \
@@ -38,7 +38,7 @@ Sample using **eu-west-1** as region and Profile name **ML_Detect_profile**:
 
 
 ```
-aws ml-iot create-security-profile \
+aws iot create-security-profile \
     --security-profile-name ML_Detect_profile \
     --behaviors \
      '[{
@@ -116,7 +116,7 @@ ML Model training summary command:
 
 
 ```
-aws ml-iot get-behavior-model-training-summaries
+aws iot get-behavior-model-training-summaries
           [--security-profile-name <value>]
           [--max-results <value>]
           [--next-token <value>]
@@ -129,7 +129,7 @@ aws ml-iot get-behavior-model-training-summaries
 Sample for **Ireland Region** i will run this as follows with profile name being **ML_Detect_profile**:
 
 ```
-aws ml-iot get-behavior-model-training-summaries
+aws iot get-behavior-model-training-summaries
 -security-profile-name ML_Detect_profile 
 --region eu-west-1 
 --endpoint-url https://iot.eu-west-1.amazonaws.com/
@@ -184,7 +184,7 @@ Command for Active violations:
 
 
 ```
-aws ml-iot list-active-violations
+aws iot list-active-violations
           [--thing-name <value>]
           [--security-profile-name <value>]
           [--behavior-criteria-type <value>]
@@ -200,7 +200,7 @@ Command for Violation Events:
 
 
 ```
-aws ml-iot list-violation-events
+aws iot list-violation-events
           --start-time <value>
           --end-time <value>
           [--thing-name <value>]
@@ -217,7 +217,7 @@ aws ml-iot list-violation-events
 
 Sample command for active violations for Ireland region:
 ```
-aws ml-iot list-active-violations 
+aws iot list-active-violations 
 --max-results 2 
 -—region eu-west-1
 ```
@@ -225,7 +225,7 @@ aws ml-iot list-active-violations
 Sample command for active historical violation events with specific start time and end time i.e.
 
 ```
-aws ml-iot list-violation-events \
+aws iot list-violation-events \
 --start-time 1599500533 --end-time 1600796533 \
 --max-results 2 \
 --region eu-west-1 
@@ -267,7 +267,7 @@ Command for updating Security profile:
 
 
 ```
-aws ml-iot update-security-profile
+aws iot update-security-profile
 --security-profile-name <value>
 [—security-profile-description <value>]
 [—behaviors <value>]
@@ -287,7 +287,7 @@ Sample Command for updating the security profile:
 
 
 ```
-aws ml-iot update-security-profile \
+aws iot update-security-profile \
     --security-profile-name ML_Detect_profile \
     --behaviors \
      '[{
@@ -363,7 +363,7 @@ Command for creating mitigation action:
 
 
 ```
-aws ml-iot create-mitigation-action
+aws iot create-mitigation-action
           --action-name <value>
           --role-arn <value>
           --action-params <value>
